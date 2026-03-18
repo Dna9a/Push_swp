@@ -55,12 +55,36 @@ void	bring_to_top_a(t_stack *a, int val)
 	}
 }
 
+void	do_combined_rotations(t_stack *a, t_stack *b,
+			int best_val, int target)
+{
+	int	pos_a;
+	int	pos_b;
+
+	pos_b = get_position(b, best_val);
+	pos_a = get_position(a, target);
+	while (b->top->data != best_val && a->top->data != target)
+	{
+		if (pos_b <= b->size / 2 && pos_a <= a->size / 2)
+			rr(a, b);
+		else if (pos_b > b->size / 2 && pos_a > a->size / 2)
+			rrr(a, b);
+		else
+			break ;
+		pos_b = get_position(b, best_val);
+		pos_a = get_position(a, target);
+	}
+}
+
 void	insert_best(t_stack *a, t_stack *b)
 {
-	int best_val;
+	int	best_val;
+	int	target;
 
 	best_val = find_best(a, b);
+	target = get_target(a, best_val);
+	do_combined_rotations(a, b, best_val, target);
 	bring_to_top_b(b, best_val);
-	bring_to_top_a(a, get_target(a, best_val));
+	bring_to_top_a(a, target);
 	pa(a, b);
 }
