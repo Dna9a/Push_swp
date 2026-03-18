@@ -36,3 +36,19 @@ int	ft_pop_stack(t_stack *stack)
 	stack->size--;
 	return (value);
 }
+
+void	ft_free_stack(t_stack *stack)
+{
+	t_list	*tmp;
+
+	if (!stack)
+		return ;
+	while (stack->top)
+	{
+		tmp = stack->top;
+		stack->top = tmp->next;
+		free(tmp);
+	}
+	stack->size = 0;
+}
+

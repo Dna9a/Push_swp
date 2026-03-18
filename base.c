@@ -27,7 +27,7 @@ void	sort_three(t_stack *a)
 		return ;
 	if (top > mid && top > bot)
 		ra(a);
-	else if (bot > mid && bot > top)
+	else if (mid > top && mid > bot)
 		rra(a);
 	if (a->top->data > a->top->next->data)
 		sa(a);

@@ -20,6 +20,7 @@ typedef struct s_stack
 t_list	*ft_lstnew(int data);
 void	ft_push_stack(t_stack *stack, int value);
 int		ft_pop_stack(t_stack *stack);
+void	ft_free_stack(t_stack *stack);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 

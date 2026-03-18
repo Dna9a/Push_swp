@@ -42,3 +42,15 @@ void	ft_reverse_rotate(t_stack *stack)
 	last->next = stack->top;
 	stack->top = last;
 }
+
+void	ra(t_stack *stack_a)
+{
+	ft_rotate(stack_a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *stack_b)
+{
+	ft_rotate(stack_b);
+	write(1, "rb\n", 3);
+}

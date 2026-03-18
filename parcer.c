@@ -38,7 +38,7 @@ int	ft_double(char **argv, int argc)
 	return (0);
 }
 
-long	ft_atol(const char *str)
+static long	ft_atol(const char *str)
 {
 	long			s;
 	unsigned long	r;
@@ -57,12 +57,18 @@ long	ft_atol(const char *str)
 	}
 	while (ft_isdigit(str[i]))
 	{
+		if (r > ((unsigned long)INT_MAX + 1) / 10)
+		{
+			if (s == 1)
+				return ((long)INT_MAX + 1);
+			return ((long)INT_MIN - 1);
+		}
 		r = r * 10 + (str[i] - '0');
 		i++;
-		if (s == 1 && r > LONG_MAX)
-			return (-1);
-		if (s == -1 && r > (unsigned long)LONG_MAX + 1)
-			return (0);
+		if (s == 1 && r > (unsigned long)INT_MAX)
+			return ((long)INT_MAX + 1);
+		if (s == -1 && r > (unsigned long)INT_MAX + 1)
+			return ((long)INT_MIN - 1);
 	}
 	return ((long)(r * s));
 }

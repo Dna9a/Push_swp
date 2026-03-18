@@ -20,5 +20,7 @@ int	main(int ac, char **av)
 		i--;
 	}
 	push_swap(&stack_a, &stack_b);
+	ft_free_stack(&stack_a);
+	ft_free_stack(&stack_b);
 	return (0);
 }
