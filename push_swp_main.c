@@ -13,15 +13,12 @@ int	main(int ac, char **av)
 	stack_a.size = 0;
 	stack_b.top = NULL;
 	stack_b.size = 0;
-	if (ac >= 2)
+	ft_jma3_o_twi(ac, av);
+	while (i >= 1)
 	{
-		ft_jma3_o_twi(ac, av);
-		while (i >= 1)
-		{
-			ft_push_stack(&stack_a, ft_atoi(av[i]));
-			i--;
-		}
-		// Here you would call your sorting algorithm, passing stack_a and stack_b as arguments
+		ft_push_stack(&stack_a, ft_atoi(av[i]));
+		i--;
 	}
+	push_swap(&stack_a, &stack_b);
 	return (0);
 }

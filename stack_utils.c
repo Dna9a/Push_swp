@@ -14,7 +14,7 @@ t_list	*ft_lstnew(int data)
 
 void	ft_push_stack(t_stack *stack, int value)
 {
-	t_node	*new_node;
+	t_list	*new_node;
 
 	new_node = ft_lstnew(value);
 	if (!new_node)
