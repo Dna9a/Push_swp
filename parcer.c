@@ -47,7 +47,7 @@ long	ft_atol(const char *str)
 	s = 1;
 	r = 0;
 	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -77,17 +77,23 @@ int	ft_is_overflow(char *str)
 	return (0);
 }
 
-void    ft_jma3_o_twi(int argc, char **argv)
+void	ft_jma3_o_twi(int argc, char **argv)
 {
-    int i;
+	int i;
 
-    i = 1;
-    if (ft_double(argv, argc))
-		return(write(2, "Error\n", 6); , 0);
-    while (i < argc)
-    {
-        if (!ft_number(argv[i]) || ft_is_overflow(argv[i]))
+	i = 1;
+	if (ft_double(argv, argc))
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	while (i < argc)
+	{
+		if (!ft_number(argv[i]) || ft_is_overflow(argv[i]))
+		{
 			write(2, "Error\n", 6);
-        i++;
-    }
+			exit(1);
+		}
+		i++;
+	}
 }

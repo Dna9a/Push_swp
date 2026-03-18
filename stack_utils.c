@@ -26,8 +26,9 @@ void	ft_push_stack(t_stack *stack, int value)
 
 int	ft_pop_stack(t_stack *stack)
 {
-	int value;
-	t_list *tmp;
+	int		value;
+	t_list	*tmp;
+
 	tmp = stack->top;
 	value = tmp->data;
 	stack->top = tmp->next;
