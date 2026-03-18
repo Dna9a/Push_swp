@@ -20,6 +20,7 @@
 typedef struct s_list
 {
 	int				data;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -49,6 +50,7 @@ void	rrr(t_stack *a, t_stack *b);
 void	ft_swap(t_stack *stack);
 void	ft_rotate(t_stack *stack);
 void	ft_reverse_rotate(t_stack *stack);
+void	ft_assign_index(t_stack *a);
 
 int		ft_number(char *str);
 int		ft_double(char **argv, int argc);

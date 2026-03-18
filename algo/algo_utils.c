@@ -46,3 +46,25 @@ int	get_cost(t_stack *a, t_stack *b, int b_val)
 		cost_a = a->size - pos_a;
 	return (cost_a + cost_b);
 }
+
+void	ft_assign_index(t_stack *a)
+{
+	t_list *tmp;
+	t_list *tmp2;
+	int index;
+
+	tmp = a->top;
+	while (tmp)
+	{
+		index = 0;
+		tmp2 = a->top;
+		while (tmp2)
+		{
+			if (tmp2->data < tmp->data)
+				index++;
+			tmp2 = tmp2->next;
+		}
+		tmp->index = index;
+		tmp = tmp->next;
+	}
+}
