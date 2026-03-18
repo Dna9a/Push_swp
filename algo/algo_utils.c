@@ -1,35 +1,4 @@
-#include "push_swap.h"
-
-int	get_target(t_stack *a, int b_val)
-{
-	t_list *tmp;
-	int target;
-	int best_diff;
-
-	tmp = a->top;
-	target = INT_MAX;
-	best_diff = INT_MAX;
-	while (tmp)
-	{
-		if (tmp->data > b_val && tmp->data - b_val < best_diff)
-		{
-			best_diff = tmp->data - b_val;
-			target = tmp->data;
-		}
-		tmp = tmp->next;
-	}
-	if (target == INT_MAX)
-	{
-		tmp = a->top;
-		while (tmp)
-		{
-			if (tmp->data < target || target == INT_MAX)
-				target = tmp->data;
-			tmp = tmp->next;
-		}
-	}
-	return (target);
-}
+#include "../push_swap.h"
 
 int	get_position(t_stack *stack, int val)
 {

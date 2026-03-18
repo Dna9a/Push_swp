@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	find_best(t_stack *a, t_stack *b)
 {

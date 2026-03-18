@@ -15,12 +15,7 @@ SRC =	push_swp_main.c \
 		Moves/rotate.c \
 		Moves/reverse.c \
 		libft/ft_atoi.c \
-		libft/ft_isdigit.c \
-		libft/ft_itoa.c \
-		libft/ft_putnbr_fd.c \
-		libft/ft_putstr_fd.c \
-		libft/ft_split.c \
-		libft/ft_strjoin.c
+		libft/ft_isdigit.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -38,8 +33,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all# re: fclean all
-
+re: fclean all
 
 # 	@echo "$(CYAN)Cleaning object files...$(RESET)"
 # 	@echo "$(CYAN)Clean complete! 🧹$(RESET)"
