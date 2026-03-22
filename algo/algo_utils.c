@@ -49,9 +49,9 @@ int	get_cost(t_stack *a, t_stack *b, int b_val)
 
 void	ft_assign_index(t_stack *a)
 {
-	t_list *tmp;
-	t_list *tmp2;
-	int index;
+	t_list	*tmp;
+	t_list	*tmp2;
+	int		index;
 
 	tmp = a->top;
 	while (tmp)

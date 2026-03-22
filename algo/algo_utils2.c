@@ -55,8 +55,7 @@ void	bring_to_top_a(t_stack *a, int val)
 	}
 }
 
-void	do_combined_rotations(t_stack *a, t_stack *b,
-			int best_val, int target)
+void	do_combined_rotations(t_stack *a, t_stack *b, int best_val, int target)
 {
 	int	pos_a;
 	int	pos_b;

@@ -91,7 +91,7 @@ int	ft_is_overflow(char *str)
 
 void	ft_jma3_o_twi(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (ft_double(argv, argc))
