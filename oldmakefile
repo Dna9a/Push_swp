@@ -1,0 +1,49 @@
+NAME = push_swap
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+RESET = \033[0m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+CYAN = \033[0;36m
+
+SRC =	push_swap_main.c \
+		stack_utils.c \
+		parser/parser.c \
+		parser/parser_uti.c \
+		libft/main_libft.c \
+		sort_base.c \
+		algo/algo.c \
+		algo/algo_utils.c \
+		algo/algo_insert.c \
+		moves/swap.c \
+		moves/push.c \
+		moves/rotate.c \
+		moves/reverse.c
+
+OBJ = $(SRC:.c=.o)
+
+.PHONY: all clean fclean re
+
+all: $(NAME)
+	@printf "$(GREEN)Build finished: $(NAME)$(RESET)\n"
+
+$(NAME): $(OBJ)
+	@printf "$(CYAN)Linking $(NAME)...$(RESET)\n"
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	@printf "$(BLUE)Compiling $<...$(RESET)\n"
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@printf "$(YELLOW)Cleaning object files...$(RESET)\n"
+	rm -f $(OBJ)
+
+fclean: clean
+	@printf "$(YELLOW)Removing $(NAME)...$(RESET)\n"
+	rm -f $(NAME)
+
+re: fclean all
